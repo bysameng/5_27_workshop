@@ -23,21 +23,25 @@ public class PlayerInput : MonoBehaviour {
 		float h = Input.GetAxis("Horizontal") * movementForce;
 		float v = Input.GetAxis("Vertical") * movementForce;
 
-		print ("Horizontal: " + h + " Vertical: " + v);
+//		print ("Horizontal: " + h + " Vertical: " + v);
 
 		Vector3 movement = new Vector3(h, 0f, v);
 		rbody.AddForce(movement);
 
 
 		if (Input.GetKeyDown(KeyCode.F)){
-			ChangeColor();
+			ChangeColor(Color.red);
+		}
+		if (Input.GetKeyDown(KeyCode.G)){
+			ChangeColor(Color.blue);
 		}
 
 	}
 
 
-	void ChangeColor(){
-		rend.material.color = Color.red;
+	void ChangeColor(Color c)
+	{
+		rend.material.color = c;
 	}
 
 
