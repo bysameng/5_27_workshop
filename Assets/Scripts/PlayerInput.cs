@@ -46,6 +46,11 @@ public class PlayerInput : MonoBehaviour {
 		this.transform.localPosition = new Vector3(0f, 0f, 0f);
 	}
 
+	public void SwapToBody(GameObject g){
+		playerBody = g;
+		Start();
+	}
+
 }
 
 
