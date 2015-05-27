@@ -5,7 +5,9 @@ public class Swapper : MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision other){
-		print (other.gameObject.name);
+		if (other.gameObject.tag == "Swappable"){
+			print (other.gameObject.name);
+		}
 	}
 
 
