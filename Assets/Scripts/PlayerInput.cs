@@ -2,13 +2,14 @@
 using System.Collections;
 
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerInput : MonoBehaviour {
 
 	private Rigidbody rbody;
 	private Renderer rend;
 
-	public float movementForce;
+	public float movementForce = 30f;
 
 	void Start () {
 		rbody = this.GetComponent<Rigidbody>();
