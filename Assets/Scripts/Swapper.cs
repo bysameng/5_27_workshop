@@ -22,6 +22,7 @@ public class Swapper : MonoBehaviour {
 
 	void DestroyPlayerInput(){
 		PlayerInput pinput = this.GetComponent<PlayerInput>();
+		pinput.ChangeColor(Color.white);
 		Destroy(pinput);
 	}
 
