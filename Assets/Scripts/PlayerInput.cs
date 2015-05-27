@@ -3,8 +3,10 @@ using System.Collections;
 
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class PlayerInput : MonoBehaviour {
+
+	public GameObject playerBody;
 
 	private Rigidbody rbody;
 	private Renderer rend;
@@ -12,14 +14,15 @@ public class PlayerInput : MonoBehaviour {
 	public float movementForce = 30f;
 
 	void Start() {
-		rbody = this.GetComponent<Rigidbody>();
-		rend = this.GetComponent<Renderer>();
+		rbody = playerBody.GetComponent<Rigidbody>();
+		rend = playerBody.GetComponent<Renderer>();
 
 //		if (rbody == null){
 //			rbody = this.gameObject.AddComponent<Rigidbody>();
 //		}
 
 		ChangeColor(Color.red);
+		SetParentToBody();
 	}
 	
 	void Update() {
@@ -38,6 +41,10 @@ public class PlayerInput : MonoBehaviour {
 	}
 
 
+	public void SetParentToBody(){
+		this.transform.parent = playerBody.transform;
+		this.transform.localPosition = new Vector3(0f, 0f, 0f);
+	}
 
 }
 
